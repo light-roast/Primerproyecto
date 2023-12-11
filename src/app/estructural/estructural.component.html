@@ -1,0 +1,18 @@
+<div class="error" *ngIf="isError">Mensaje de error: Algo salió mal :(</div>
+<button (click)="showError()">Mostrar error</button>
+
+<ul>
+    <li *ngFor="let item of sections">{{item}}</li>
+</ul>
+
+<ng-template #holiwi>
+    <ol>
+        <li>Todo</li>
+        <li>Lo</li>
+        <li>Rico</li>
+        <a [routerLink]="['/pipes']" routerLinkActive="router-link-active" >Ver route</a>
+    </ol>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="isError? holiwi : null"></ng-container>
+
