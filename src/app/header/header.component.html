@@ -1,2 +1,10 @@
-<h1>El resultado es {{resultado}}</h1>
-<button (click)="sumar(4,4)">Sumar</button>
+<button [routerLink]="['/pipes']" routerLinkActive="active" >Pipes</button>
+<button [routerLink]="['/estructural']" routerLinkActive="active" >Estructural</button>
+<button [routerLink]="['/compra']" routerLinkActive="active" >Compra</button>
+<button [routerLink]="['/formularios']" routerLinkActive="active" >Formularios</button>
+
+<router-outlet>
+    
+</router-outlet>
+
+<hr>

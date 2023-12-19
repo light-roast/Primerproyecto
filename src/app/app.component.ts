@@ -7,20 +7,22 @@ import { EstructuralComponent } from './estructural/estructural.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { CompraModule } from './compra/compra.module';
 import { VentaModule } from './venta/venta.module';
+import { FormulariosComponent } from './formularios/formularios.component';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, AtributoComponent, EstructuralComponent, PipesComponent, CompraModule, RouterModule, VentaModule],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, AtributoComponent, EstructuralComponent, PipesComponent, CompraModule, RouterModule, VentaModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Primerproyecto';
   constructor(){
-    localStorage.setItem('id', '124');
+    localStorage.setItem('id', '1234');
   }
 
 }
