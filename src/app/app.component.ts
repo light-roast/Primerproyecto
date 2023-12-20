@@ -9,13 +9,24 @@ import { CompraModule } from './compra/compra.module';
 import { VentaModule } from './venta/venta.module';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TodosComponent } from './todos/todos.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, AtributoComponent, EstructuralComponent, PipesComponent, CompraModule, RouterModule, VentaModule, ReactiveFormsModule],
+  imports: [CommonModule, 
+    RouterOutlet, 
+    HeaderComponent, 
+    AtributoComponent, 
+    EstructuralComponent, 
+    PipesComponent, CompraModule, 
+    RouterModule, 
+    VentaModule, 
+    ReactiveFormsModule, 
+    TodosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
