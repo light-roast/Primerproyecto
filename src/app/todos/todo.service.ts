@@ -14,4 +14,16 @@ export class TodoService {
   getTodos() {
     return this.http.get('https://jsonplaceholder.typicode.com/todos');
   }
+
+  getComments(postId: number) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`);
+  }
+
+  postFunc(){
+    const body = {
+      name: 'Daniel',
+      profesión: 'Don Chimbo'
+    };
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', body);
+  }
 }
