@@ -9,8 +9,9 @@ import { CompraModule } from './compra/compra.module';
 import { VentaModule } from './venta/venta.module';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TodosComponent } from './todos/todos.component';
+import { InterceptService } from './services/intercept.service';
 
 
 
@@ -25,8 +26,10 @@ import { TodosComponent } from './todos/todos.component';
     PipesComponent, CompraModule, 
     RouterModule, 
     VentaModule, 
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+    TodosComponent, 
     TodosComponent],
+  
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

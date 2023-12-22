@@ -1,7 +1,8 @@
 import { Component, OnInit, inject} from '@angular/core';
 import { TodoService } from './todo.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
+import { InterceptService } from '../services/intercept.service';
 
 
 @Component({
