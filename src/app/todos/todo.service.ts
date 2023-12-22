@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,13 @@ export class TodoService {
   //     'Content-Type': 'application/json'
   //   }),
   // // }
+  private postSource = new Subject();
+  public posts$ = this.postSource.asObservable();
+
+  emitdata(){
+    this.postSource.next("Information");
+  }
+
   getTodos() {
     return this.http.get('https://jsonplaceholder.typicode.com/todos');
   }

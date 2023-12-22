@@ -1,15 +1,15 @@
 import { Component, OnInit, inject} from '@angular/core';
 import { TodoService } from './todo.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
-import { InterceptService } from '../services/intercept.service';
+import { TodoComponent } from './todo/todo.component';
 
 
 @Component({
   selector: 'app-todos',
   standalone: true,
   imports: [HttpClientModule,
-  NgFor],
+  NgFor, TodoComponent],
   providers: [TodoService],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
@@ -21,6 +21,7 @@ export class TodosComponent implements OnInit {
   comments: any[] = [];
 
   ngOnInit(): void {
+    
     this.todoService.getTodos().subscribe((todos: any) => {
       console.log(todos);
       this.todos = todos;
@@ -33,6 +34,10 @@ export class TodosComponent implements OnInit {
     this.todoService.postFunc().subscribe((res) => {
       console.log(res);
     })
-  }
+    }
+
+    updatePost(){
+      this.todoService.emitdata();
+      }
   }
 
