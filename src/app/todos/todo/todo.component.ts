@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { TodoService } from '../todo.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { Subscription, map, tap } from 'rxjs';
 
 
 @Component({
@@ -16,7 +16,12 @@ export class TodoComponent implements OnInit{
   todoService: TodoService = inject(TodoService);
   
   ngOnInit(): void {
-    this.todoService.posts$.subscribe((res) => {
+    this.todoService.posts$.pipe(
+      map((res: number[]) => {
+        return res.filter((num) => num > 3);
+      }),
+      tap((res) => console.log("Desde el tap: ", res))
+    ).subscribe((res) => {
       console.log("Nueva: ", res)
     });
   }

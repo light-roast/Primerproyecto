@@ -12,11 +12,11 @@ export class TodoService {
   //     'Content-Type': 'application/json'
   //   }),
   // // }
-  private postSource = new Subject();
+  private postSource = new Subject<number[]>();
   public posts$ = this.postSource.asObservable();
 
   emitdata(){
-    this.postSource.next("Information");
+    this.postSource.next([1,2,3,4,5,6]);
   }
 
   getTodos() {
