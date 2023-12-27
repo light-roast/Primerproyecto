@@ -14,7 +14,7 @@ import { Subscription, map, tap } from 'rxjs';
 })
 export class TodoComponent implements OnInit{
   todoService: TodoService = inject(TodoService);
-  
+  //Listo el apartado teórico 
   ngOnInit(): void {
     this.todoService.posts$.pipe(
       map((res: number[]) => {
